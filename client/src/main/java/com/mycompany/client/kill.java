@@ -22,7 +22,7 @@ public class kill extends javax.swing.JFrame {
      */
     public kill() {
         initComponents();
-        this.setShape(new RoundRectangle2D.Double(0, 0, this.getWidth(), this.getHeight(), 30, 30));
+        this.setShape(new RoundRectangle2D.Double(0, 0, this.getWidth(), this.getHeight(), 15, 15));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
@@ -68,7 +68,7 @@ public class kill extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("Input ID");
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -79,7 +79,7 @@ public class kill extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Kill");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -87,7 +87,7 @@ public class kill extends javax.swing.JFrame {
         });
 
         quit.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
-        quit.setForeground(new java.awt.Color(255, 204, 51));
+        quit.setForeground(new java.awt.Color(255, 255, 255));
         quit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quit.setText("X");
         quit.addMouseListener(new java.awt.event.MouseAdapter() {

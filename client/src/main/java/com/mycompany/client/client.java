@@ -57,7 +57,7 @@ public class client extends javax.swing.JFrame {
         apptableheader.setForeground(new java.awt.Color(255,255,255));
         jScrollPane1.getViewport().setBackground(new java.awt.Color(51,51,51));
         jScrollPane2.getViewport().setBackground(new java.awt.Color(51,51,51));
-        this.setShape(new RoundRectangle2D.Double(0, 0, this.getWidth(), this.getHeight(), 30, 30));
+        this.setShape(new RoundRectangle2D.Double(0, 0, this.getWidth(), this.getHeight(), 15, 15));
     }
 
     /**
@@ -121,7 +121,7 @@ public class client extends javax.swing.JFrame {
         savepic.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         savepic.setForeground(new java.awt.Color(255, 255, 255));
         savepic.setText("Save");
-        savepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        savepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         savepic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savepicActionPerformed(evt);
@@ -129,13 +129,13 @@ public class client extends javax.swing.JFrame {
         });
 
         screenshot.setForeground(new java.awt.Color(51, 51, 51));
-        screenshot.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        screenshot.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         takepic.setBackground(new java.awt.Color(51, 51, 51));
         takepic.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         takepic.setForeground(new java.awt.Color(255, 255, 255));
         takepic.setText("Take screenshot");
-        takepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        takepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         takepic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 takepicActionPerformed(evt);
@@ -172,12 +172,12 @@ public class client extends javax.swing.JFrame {
         lprocess.setBackground(new java.awt.Color(0, 0, 0));
 
         jScrollPane2.setBackground(new java.awt.Color(51, 51, 51));
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 0), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         processtable.setBackground(new java.awt.Color(51, 51, 51));
-        processtable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        processtable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         processtable.setForeground(new java.awt.Color(255, 255, 255));
         processtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -195,7 +195,7 @@ public class client extends javax.swing.JFrame {
         Xemprocess.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xemprocess.setForeground(new java.awt.Color(255, 255, 255));
         Xemprocess.setText("Xem");
-        Xemprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xemprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Xemprocess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XemprocessActionPerformed(evt);
@@ -206,7 +206,7 @@ public class client extends javax.swing.JFrame {
         Kill2.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Kill2.setForeground(new java.awt.Color(255, 255, 255));
         Kill2.setText("Kill");
-        Kill2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Kill2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Kill2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Kill2ActionPerformed(evt);
@@ -217,7 +217,7 @@ public class client extends javax.swing.JFrame {
         Xoaprocess.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xoaprocess.setForeground(new java.awt.Color(255, 255, 255));
         Xoaprocess.setText("Xóa");
-        Xoaprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xoaprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Xoaprocess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XoaprocessActionPerformed(evt);
@@ -228,7 +228,7 @@ public class client extends javax.swing.JFrame {
         Start2.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Start2.setForeground(new java.awt.Color(255, 255, 255));
         Start2.setText("Start");
-        Start2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Start2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Start2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Start2ActionPerformed(evt);
@@ -273,7 +273,7 @@ public class client extends javax.swing.JFrame {
         Xemapp.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xemapp.setForeground(new java.awt.Color(255, 255, 255));
         Xemapp.setText("Xem");
-        Xemapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xemapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Xemapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XemappActionPerformed(evt);
@@ -284,7 +284,7 @@ public class client extends javax.swing.JFrame {
         Kill.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Kill.setForeground(new java.awt.Color(255, 255, 255));
         Kill.setText("Kill");
-        Kill.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Kill.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Kill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 KillActionPerformed(evt);
@@ -295,7 +295,7 @@ public class client extends javax.swing.JFrame {
         Xoaapp.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xoaapp.setForeground(new java.awt.Color(255, 255, 255));
         Xoaapp.setText("Xóa");
-        Xoaapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xoaapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Xoaapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XoaappActionPerformed(evt);
@@ -306,7 +306,7 @@ public class client extends javax.swing.JFrame {
         Start.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Start.setForeground(new java.awt.Color(255, 255, 255));
         Start.setText("Start");
-        Start.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Start.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartActionPerformed(evt);
@@ -314,13 +314,13 @@ public class client extends javax.swing.JFrame {
         });
 
         jScrollPane1.setBackground(new java.awt.Color(51, 51, 51));
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setToolTipText("");
-        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 0), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 0), new java.awt.Color(255, 204, 51)));
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
 
         apptable.setBackground(new java.awt.Color(51, 51, 51));
-        apptable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        apptable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         apptable.setForeground(new java.awt.Color(255, 255, 255));
         apptable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -374,7 +374,7 @@ public class client extends javax.swing.JFrame {
         Exit.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         Exit.setForeground(new java.awt.Color(255, 255, 255));
         Exit.setText("Disconnect");
-        Exit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Exit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
@@ -385,7 +385,7 @@ public class client extends javax.swing.JFrame {
         keylog.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         keylog.setForeground(new java.awt.Color(255, 255, 255));
         keylog.setText("Key Logger");
-        keylog.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        keylog.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         keylog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 keylogActionPerformed(evt);
@@ -396,7 +396,7 @@ public class client extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Shut Down");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -407,7 +407,7 @@ public class client extends javax.swing.JFrame {
         signout.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
         signout.setText("Sign Out of User");
-        signout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        signout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         signout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signoutActionPerformed(evt);
@@ -485,7 +485,7 @@ public class client extends javax.swing.JFrame {
         systembutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         systembutton.setForeground(new java.awt.Color(255, 255, 255));
         systembutton.setText("System");
-        systembutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        systembutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         systembutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 systembuttonActionPerformed(evt);
@@ -496,7 +496,7 @@ public class client extends javax.swing.JFrame {
         appbutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         appbutton.setForeground(new java.awt.Color(255, 255, 255));
         appbutton.setText("Application");
-        appbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        appbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         appbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appbuttonActionPerformed(evt);
@@ -507,7 +507,7 @@ public class client extends javax.swing.JFrame {
         processbutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         processbutton.setForeground(new java.awt.Color(255, 255, 255));
         processbutton.setText("Process");
-        processbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        processbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         processbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processbuttonActionPerformed(evt);
@@ -518,7 +518,7 @@ public class client extends javax.swing.JFrame {
         screenshotbutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         screenshotbutton.setForeground(new java.awt.Color(255, 255, 255));
         screenshotbutton.setText("Screenshot");
-        screenshotbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        screenshotbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         screenshotbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 screenshotbuttonActionPerformed(evt);
@@ -527,15 +527,15 @@ public class client extends javax.swing.JFrame {
 
         iptext.setBackground(new java.awt.Color(0, 0, 0));
         iptext.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        iptext.setForeground(new java.awt.Color(255, 204, 51));
+        iptext.setForeground(new java.awt.Color(255, 255, 255));
         iptext.setText("Input IP");
-        iptext.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        iptext.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         ipconnect.setBackground(new java.awt.Color(51, 51, 51));
         ipconnect.setFont(new java.awt.Font("Teko SemiBold", 0, 14)); // NOI18N
-        ipconnect.setForeground(new java.awt.Color(255, 204, 51));
+        ipconnect.setForeground(new java.awt.Color(255, 255, 255));
         ipconnect.setText("Connect");
-        ipconnect.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        ipconnect.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         ipconnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ipconnectActionPerformed(evt);
@@ -602,7 +602,7 @@ public class client extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 204, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("X");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -612,11 +612,11 @@ public class client extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 204, 51));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Remote Control Project");
 
         jLabel3.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 204, 51));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("-");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1012,6 +1012,14 @@ public class client extends javax.swing.JFrame {
     }//GEN-LAST:event_keylogActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        String s = "EXIT";
+        try {
+            program.os.write(s);
+            program.os.newLine();
+            program.os.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
     }//GEN-LAST:event_jLabel1MouseClicked
 

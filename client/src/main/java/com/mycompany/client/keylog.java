@@ -19,7 +19,7 @@ public class keylog extends javax.swing.JFrame {
      */
     public keylog() {
         initComponents();
-        this.setShape(new RoundRectangle2D.Double(0, 0, this.getWidth(), this.getHeight(), 30, 30));
+        this.setShape(new RoundRectangle2D.Double(0, 0, this.getWidth(), this.getHeight(), 15, 15));
     }
     
 
@@ -57,7 +57,7 @@ public class keylog extends javax.swing.JFrame {
         hook.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         hook.setForeground(new java.awt.Color(255, 255, 255));
         hook.setText("Hook");
-        hook.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        hook.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         hook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hookActionPerformed(evt);
@@ -68,7 +68,7 @@ public class keylog extends javax.swing.JFrame {
         unhook.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         unhook.setForeground(new java.awt.Color(255, 255, 255));
         unhook.setText("UnHook");
-        unhook.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        unhook.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         unhook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unhookActionPerformed(evt);
@@ -79,7 +79,7 @@ public class keylog extends javax.swing.JFrame {
         print.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         print.setForeground(new java.awt.Color(255, 255, 255));
         print.setText("Print");
-        print.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        print.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         print.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printActionPerformed(evt);
@@ -90,14 +90,14 @@ public class keylog extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         jScrollPane1.setViewportView(jTextArea1);
 
         delete.setBackground(new java.awt.Color(51, 51, 51));
         delete.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
         delete.setForeground(new java.awt.Color(255, 255, 255));
         delete.setText("Delete");
-        delete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        delete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteActionPerformed(evt);
@@ -120,7 +120,7 @@ public class keylog extends javax.swing.JFrame {
         });
 
         quit.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
-        quit.setForeground(new java.awt.Color(255, 204, 51));
+        quit.setForeground(new java.awt.Color(255, 255, 255));
         quit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quit.setText("X");
         quit.addMouseListener(new java.awt.event.MouseAdapter() {

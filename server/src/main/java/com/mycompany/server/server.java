@@ -5,6 +5,7 @@
 package com.mycompany.server;
 import com.github.kwhat.jnativehook.GlobalScreen;
 import com.github.kwhat.jnativehook.NativeHookException;
+import java.awt.AWTException;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.BufferedReader;
@@ -16,28 +17,14 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
-import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.net.Socket;
-import java.nio.ByteBuffer;
-import java.util.Iterator;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
-import javax.imageio.ImageWriteParam;
-import javax.imageio.ImageWriter;
-import javax.imageio.stream.ImageOutputStream;
-import javax.imageio.stream.MemoryCacheImageOutputStream;
-import javax.swing.ImageIcon;
-import org.apache.commons.lang3.StringUtils;
 /**
  *
  * @author LEGION
@@ -432,12 +419,12 @@ public class server extends javax.swing.JFrame {
                             case "STARTEXE" -> {
                                 String exe = program.is.readLine();
                                 exe = exe+".exe";
-                                if (exe != "ERROR")
+                                if (!"ERROR".equals(exe))
                                 {
                                 try {
-                                    String[] run = {"cmd","/c","start", exe};
+//                                    String[] run = {"cmd","/c","start", exe};
                                     ProcessBuilder p = new ProcessBuilder();
-                                    p.command(run);
+                                    p.command(exe);
                                     p.start();
                                     program.os.write("Successfully run the program!");
                                     program.os.newLine();
@@ -468,15 +455,13 @@ public void takepic() throws IOException
     {
         try{
             robot = new Robot();
-            os = program.sserver.getOutputStream();
             ous = new ByteArrayOutputStream();
             bimg = robot.createScreenCapture(new Rectangle(0,0,(int) d.getWidth(), (int) d.getHeight()));
             ImageIO.write(bimg, "png", ous);
             byte[] bytes = ous.toByteArray();
             out = new ObjectOutputStream(program.sserver.getOutputStream()) ;
             out.writeObject(bytes); 
-            return;
-            } catch(Exception ex){
+            } catch(AWTException | IOException ex){
                 JOptionPane.showMessageDialog(null,ex);
             }
     }
