@@ -688,35 +688,35 @@ public class client extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void systembuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_systembuttonActionPerformed
         lsystem.setVisible(true);
         lapp.setVisible(false);
         lprocess.setVisible(false);
         lscreenshot.setVisible(false);
     }//GEN-LAST:event_systembuttonActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void appbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appbuttonActionPerformed
         lsystem.setVisible(false);
         lapp.setVisible(true);
         lprocess.setVisible(false);
         lscreenshot.setVisible(false);
     }//GEN-LAST:event_appbuttonActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void processbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processbuttonActionPerformed
         lsystem.setVisible(false);
         lapp.setVisible(false);
         lprocess.setVisible(true);
         lscreenshot.setVisible(false);
     }//GEN-LAST:event_processbuttonActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void screenshotbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_screenshotbuttonActionPerformed
         lsystem.setVisible(false);
         lapp.setVisible(false);
         lprocess.setVisible(false);
         lscreenshot.setVisible(true);
     }//GEN-LAST:event_screenshotbuttonActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void ipconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipconnectActionPerformed
         String s;
         boolean test = true;
@@ -743,7 +743,7 @@ public class client extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ipconnectActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void XemappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XemappActionPerformed
         if(program.sclient == null)
         {
@@ -774,7 +774,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_XemappActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void KillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KillActionPerformed
         if(program.sclient == null)
         {
@@ -791,7 +791,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_KillActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void XoaappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaappActionPerformed
         if(program.sclient == null)
         {
@@ -804,7 +804,7 @@ public class client extends javax.swing.JFrame {
             dm.removeRow(0);
         }
     }//GEN-LAST:event_XoaappActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void StartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartActionPerformed
         if(program.sclient == null)
         {
@@ -821,7 +821,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_StartActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void XemprocessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XemprocessActionPerformed
         if(program.sclient == null)
         {
@@ -842,7 +842,7 @@ public class client extends javax.swing.JFrame {
             int soprocess1 = 0;
             soprocess1 = Integer.parseInt(soprocess);
             oin = new ObjectInputStream(program.sclient.getInputStream());
-            for (int i = 0; i < soprocess1-3; i++)
+            for (int i = 0; i < soprocess1; i++)
             {
                 String[] data = (String[]) oin.readObject();
                 DefaultTableModel table = (DefaultTableModel)processtable.getModel();
@@ -852,7 +852,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_XemprocessActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void Kill2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Kill2ActionPerformed
         if(program.sclient == null)
         {
@@ -869,7 +869,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Kill2ActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void XoaprocessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaprocessActionPerformed
         if(program.sclient == null)
         {
@@ -882,7 +882,7 @@ public class client extends javax.swing.JFrame {
             dm.removeRow(0);
         }
     }//GEN-LAST:event_XoaprocessActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void Start2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Start2ActionPerformed
         if(program.sclient == null)
         {
@@ -899,7 +899,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Start2ActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         if(program.sclient == null)
         {
@@ -917,7 +917,7 @@ public class client extends javax.swing.JFrame {
         status.setText("Disconnected");
         status.setForeground(Color.RED);
     }//GEN-LAST:event_ExitActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(program.sclient == null)
         {
@@ -936,7 +936,7 @@ public class client extends javax.swing.JFrame {
         status.setText("Disconnected");
         status.setForeground(Color.RED);
     }//GEN-LAST:event_jButton2ActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void savepicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savepicActionPerformed
 
         JFileChooser fileChooser = new JFileChooser();
@@ -954,7 +954,7 @@ public class client extends javax.swing.JFrame {
             System.out.println("No file choosen!");
         }
     }//GEN-LAST:event_savepicActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void takepicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_takepicActionPerformed
         String s = "SCREENSHOT";
         try {
@@ -973,7 +973,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_takepicActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void signoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutActionPerformed
         if(program.sclient == null)
         {
@@ -992,7 +992,7 @@ public class client extends javax.swing.JFrame {
         status.setText("Disconnected");
         status.setForeground(Color.RED);
     }//GEN-LAST:event_signoutActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void keylogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keylogActionPerformed
         if(program.sclient == null)
         {
@@ -1010,7 +1010,7 @@ public class client extends javax.swing.JFrame {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_keylogActionPerformed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         String s = "EXIT";
         try {
@@ -1022,18 +1022,18 @@ public class client extends javax.swing.JFrame {
         }
         System.exit(0);
     }//GEN-LAST:event_jLabel1MouseClicked
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x-xMouse, y-yMouse);
     }//GEN-LAST:event_jPanel4MouseDragged
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jPanel4MousePressed
-
+  //------------------------------------------------------------------------------------------------------------------------------------------------
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         this.setState(client.ICONIFIED);
     }//GEN-LAST:event_jLabel3MouseClicked
