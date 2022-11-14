@@ -982,7 +982,6 @@ public class client extends javax.swing.JFrame {
         }
         String s = "SIGNOUT";
         try {
-            //            program.os = new BufferedWriter(new OutputStreamWriter(program.sclient.getOutputStream()));
             program.os.write(s);
             program.os.newLine();
             program.os.flush();
@@ -1037,7 +1036,33 @@ public class client extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         this.setState(client.ICONIFIED);
     }//GEN-LAST:event_jLabel3MouseClicked
+    private void systembuttonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        lsystem.setVisible(true);
+        lapp.setVisible(false);
+        lprocess.setVisible(false);
+        lscreenshot.setVisible(false);
+    }                                            
 
+    private void appbuttonActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        lsystem.setVisible(false);
+        lapp.setVisible(true);
+        lprocess.setVisible(false);
+        lscreenshot.setVisible(false);
+    }                                         
+
+    private void processbuttonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        lsystem.setVisible(false);
+        lapp.setVisible(false);
+        lprocess.setVisible(true);
+        lscreenshot.setVisible(false);
+    }                                             
+
+    private void screenshotbuttonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        lsystem.setVisible(false);
+        lapp.setVisible(false);
+        lprocess.setVisible(false);
+        lscreenshot.setVisible(true);
+    } 
     /**
      * @param args the command line arguments
      */
