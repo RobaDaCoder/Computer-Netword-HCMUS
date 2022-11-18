@@ -5,14 +5,14 @@
 package com.mycompany.client;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,6 +57,7 @@ public class client extends javax.swing.JFrame {
         apptableheader.setForeground(new java.awt.Color(255,255,255));
         jScrollPane1.getViewport().setBackground(new java.awt.Color(51,51,51));
         jScrollPane2.getViewport().setBackground(new java.awt.Color(51,51,51));
+        this.setShape(new RoundRectangle2D.Double(0, 0, this.getWidth(), this.getHeight(), 15, 15));
     }
 
     /**
@@ -68,6 +69,7 @@ public class client extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lscreenshot = new javax.swing.JPanel();
         savepic = new javax.swing.JButton();
@@ -90,8 +92,9 @@ public class client extends javax.swing.JFrame {
         lsystem = new javax.swing.JPanel();
         Exit = new javax.swing.JButton();
         keylog = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        restart = new javax.swing.JButton();
+        signout = new javax.swing.JButton();
+        shutdown = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         systembutton = new javax.swing.JButton();
         appbutton = new javax.swing.JButton();
@@ -100,19 +103,26 @@ public class client extends javax.swing.JFrame {
         iptext = new javax.swing.JTextField();
         ipconnect = new javax.swing.JButton();
         status = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
+        setUndecorated(true);
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
-        lscreenshot.setBackground(new java.awt.Color(51, 51, 51));
+        lscreenshot.setBackground(new java.awt.Color(0, 0, 0));
 
         savepic.setBackground(new java.awt.Color(51, 51, 51));
         savepic.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         savepic.setForeground(new java.awt.Color(255, 255, 255));
         savepic.setText("Save");
-        savepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        savepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         savepic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savepicActionPerformed(evt);
@@ -120,13 +130,13 @@ public class client extends javax.swing.JFrame {
         });
 
         screenshot.setForeground(new java.awt.Color(51, 51, 51));
-        screenshot.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        screenshot.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         takepic.setBackground(new java.awt.Color(51, 51, 51));
         takepic.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         takepic.setForeground(new java.awt.Color(255, 255, 255));
         takepic.setText("Take screenshot");
-        takepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        takepic.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         takepic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 takepicActionPerformed(evt);
@@ -138,20 +148,20 @@ public class client extends javax.swing.JFrame {
         lscreenshotLayout.setHorizontalGroup(
             lscreenshotLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lscreenshotLayout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(84, Short.MAX_VALUE)
                 .addComponent(screenshot, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
             .addGroup(lscreenshotLayout.createSequentialGroup()
                 .addGap(140, 140, 140)
                 .addComponent(takepic)
-                .addGap(165, 165, 165)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(savepic, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(180, 180, 180))
         );
         lscreenshotLayout.setVerticalGroup(
             lscreenshotLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lscreenshotLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(70, Short.MAX_VALUE)
                 .addGroup(lscreenshotLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(takepic, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(savepic, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -160,15 +170,15 @@ public class client extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
-        lprocess.setBackground(new java.awt.Color(51, 51, 51));
+        lprocess.setBackground(new java.awt.Color(0, 0, 0));
 
         jScrollPane2.setBackground(new java.awt.Color(51, 51, 51));
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 0), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         processtable.setBackground(new java.awt.Color(51, 51, 51));
-        processtable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        processtable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         processtable.setForeground(new java.awt.Color(255, 255, 255));
         processtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,7 +196,7 @@ public class client extends javax.swing.JFrame {
         Xemprocess.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xemprocess.setForeground(new java.awt.Color(255, 255, 255));
         Xemprocess.setText("Xem");
-        Xemprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xemprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Xemprocess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XemprocessActionPerformed(evt);
@@ -197,7 +207,7 @@ public class client extends javax.swing.JFrame {
         Kill2.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Kill2.setForeground(new java.awt.Color(255, 255, 255));
         Kill2.setText("Kill");
-        Kill2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Kill2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Kill2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Kill2ActionPerformed(evt);
@@ -208,7 +218,7 @@ public class client extends javax.swing.JFrame {
         Xoaprocess.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xoaprocess.setForeground(new java.awt.Color(255, 255, 255));
         Xoaprocess.setText("Xóa");
-        Xoaprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xoaprocess.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Xoaprocess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XoaprocessActionPerformed(evt);
@@ -219,7 +229,7 @@ public class client extends javax.swing.JFrame {
         Start2.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Start2.setForeground(new java.awt.Color(255, 255, 255));
         Start2.setText("Start");
-        Start2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Start2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Start2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Start2ActionPerformed(evt);
@@ -233,7 +243,7 @@ public class client extends javax.swing.JFrame {
             .addGroup(lprocessLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(lprocessLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
                     .addGroup(lprocessLayout.createSequentialGroup()
                         .addComponent(Kill2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
@@ -255,16 +265,16 @@ public class client extends javax.swing.JFrame {
                     .addComponent(Kill2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        lapp.setBackground(new java.awt.Color(51, 51, 51));
+        lapp.setBackground(new java.awt.Color(0, 0, 0));
 
         Xemapp.setBackground(new java.awt.Color(51, 51, 51));
         Xemapp.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xemapp.setForeground(new java.awt.Color(255, 255, 255));
         Xemapp.setText("Xem");
-        Xemapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xemapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Xemapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XemappActionPerformed(evt);
@@ -275,7 +285,7 @@ public class client extends javax.swing.JFrame {
         Kill.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Kill.setForeground(new java.awt.Color(255, 255, 255));
         Kill.setText("Kill");
-        Kill.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Kill.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Kill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 KillActionPerformed(evt);
@@ -286,7 +296,7 @@ public class client extends javax.swing.JFrame {
         Xoaapp.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Xoaapp.setForeground(new java.awt.Color(255, 255, 255));
         Xoaapp.setText("Xóa");
-        Xoaapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Xoaapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Xoaapp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XoaappActionPerformed(evt);
@@ -297,7 +307,7 @@ public class client extends javax.swing.JFrame {
         Start.setFont(new java.awt.Font("Unispace", 1, 12)); // NOI18N
         Start.setForeground(new java.awt.Color(255, 255, 255));
         Start.setText("Start");
-        Start.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Start.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         Start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartActionPerformed(evt);
@@ -305,13 +315,13 @@ public class client extends javax.swing.JFrame {
         });
 
         jScrollPane1.setBackground(new java.awt.Color(51, 51, 51));
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setToolTipText("");
-        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 0), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 0), new java.awt.Color(255, 204, 51)));
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
 
         apptable.setBackground(new java.awt.Color(51, 51, 51));
-        apptable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        apptable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         apptable.setForeground(new java.awt.Color(255, 255, 255));
         apptable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -334,7 +344,7 @@ public class client extends javax.swing.JFrame {
             .addGroup(lappLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(lappLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
                     .addGroup(lappLayout.createSequentialGroup()
                         .addComponent(Kill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(42, 42, 42)
@@ -356,16 +366,16 @@ public class client extends javax.swing.JFrame {
                     .addComponent(Start, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        lsystem.setBackground(new java.awt.Color(51, 51, 51));
+        lsystem.setBackground(new java.awt.Color(0, 0, 0));
 
         Exit.setBackground(new java.awt.Color(51, 51, 51));
         Exit.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         Exit.setForeground(new java.awt.Color(255, 255, 255));
         Exit.setText("Disconnect");
-        Exit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        Exit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
@@ -376,51 +386,75 @@ public class client extends javax.swing.JFrame {
         keylog.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         keylog.setForeground(new java.awt.Color(255, 255, 255));
         keylog.setText("Key Logger");
-        keylog.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
-
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Shut Down");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        keylog.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        keylog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                keylogActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 51));
-        jButton3.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Sign Out of User");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        restart.setBackground(new java.awt.Color(51, 51, 51));
+        restart.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
+        restart.setForeground(new java.awt.Color(255, 255, 255));
+        restart.setText("Restart");
+        restart.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        restart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restartActionPerformed(evt);
+            }
+        });
+
+        signout.setBackground(new java.awt.Color(51, 51, 51));
+        signout.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
+        signout.setForeground(new java.awt.Color(255, 255, 255));
+        signout.setText("Sign Out of User");
+        signout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        signout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signoutActionPerformed(evt);
+            }
+        });
+
+        shutdown.setBackground(new java.awt.Color(51, 51, 51));
+        shutdown.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
+        shutdown.setForeground(new java.awt.Color(255, 255, 255));
+        shutdown.setText("Shut Down");
+        shutdown.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        shutdown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shutdownActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout lsystemLayout = new javax.swing.GroupLayout(lsystem);
         lsystem.setLayout(lsystemLayout);
         lsystemLayout.setHorizontalGroup(
             lsystemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lsystemLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lsystemLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGap(34, 34, 34))
             .addGroup(lsystemLayout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addGroup(lsystemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shutdown, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(signout, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restart, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(keylog, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
         lsystemLayout.setVerticalGroup(
             lsystemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lsystemLayout.createSequentialGroup()
-                .addContainerGap(161, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addComponent(keylog, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(restart, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(shutdown, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(signout, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116)
                 .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
@@ -431,34 +465,50 @@ public class client extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lsystem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(lapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(lapp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 19, Short.MAX_VALUE)))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(lprocess, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(lprocess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 21, Short.MAX_VALUE)))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(lscreenshot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(lscreenshot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 20, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lsystem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lsystem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(lapp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(lprocess, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(lscreenshot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lscreenshot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         lscreenshot.getAccessibleContext().setAccessibleParent(jPanel2);
         lprocess.getAccessibleContext().setAccessibleParent(jPanel2);
         lapp.getAccessibleContext().setAccessibleParent(jPanel2);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         systembutton.setBackground(new java.awt.Color(51, 51, 51));
         systembutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         systembutton.setForeground(new java.awt.Color(255, 255, 255));
         systembutton.setText("System");
-        systembutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        systembutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        systembutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                systembuttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                systembuttonMouseExited(evt);
+            }
+        });
         systembutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 systembuttonActionPerformed(evt);
@@ -469,7 +519,15 @@ public class client extends javax.swing.JFrame {
         appbutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         appbutton.setForeground(new java.awt.Color(255, 255, 255));
         appbutton.setText("Application");
-        appbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        appbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        appbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                appbuttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                appbuttonMouseExited(evt);
+            }
+        });
         appbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appbuttonActionPerformed(evt);
@@ -480,7 +538,15 @@ public class client extends javax.swing.JFrame {
         processbutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         processbutton.setForeground(new java.awt.Color(255, 255, 255));
         processbutton.setText("Process");
-        processbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        processbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        processbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                processbuttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                processbuttonMouseExited(evt);
+            }
+        });
         processbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processbuttonActionPerformed(evt);
@@ -491,24 +557,32 @@ public class client extends javax.swing.JFrame {
         screenshotbutton.setFont(new java.awt.Font("Unispace", 1, 14)); // NOI18N
         screenshotbutton.setForeground(new java.awt.Color(255, 255, 255));
         screenshotbutton.setText("Screenshot");
-        screenshotbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0), java.awt.Color.black, new java.awt.Color(153, 0, 0)));
+        screenshotbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        screenshotbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                screenshotbuttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                screenshotbuttonMouseExited(evt);
+            }
+        });
         screenshotbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 screenshotbuttonActionPerformed(evt);
             }
         });
 
-        iptext.setBackground(new java.awt.Color(51, 51, 51));
+        iptext.setBackground(new java.awt.Color(0, 0, 0));
         iptext.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        iptext.setForeground(new java.awt.Color(255, 204, 51));
-        iptext.setText("Nhập IP");
-        iptext.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        iptext.setForeground(new java.awt.Color(255, 255, 255));
+        iptext.setText("Input IP");
+        iptext.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         ipconnect.setBackground(new java.awt.Color(51, 51, 51));
         ipconnect.setFont(new java.awt.Font("Teko SemiBold", 0, 14)); // NOI18N
-        ipconnect.setForeground(new java.awt.Color(255, 204, 51));
+        ipconnect.setForeground(new java.awt.Color(255, 255, 255));
         ipconnect.setText("Connect");
-        ipconnect.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51), new java.awt.Color(255, 51, 51), new java.awt.Color(255, 204, 51)));
+        ipconnect.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         ipconnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ipconnectActionPerformed(evt);
@@ -551,7 +625,7 @@ public class client extends javax.swing.JFrame {
                 .addComponent(ipconnect)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(systembutton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(appbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -562,21 +636,101 @@ public class client extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel4MouseDragged(evt);
+            }
+        });
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel4MousePressed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("X");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Remote Control Project");
+
+        jLabel3.setFont(new java.awt.Font("Unispace", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("-");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 845, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(187, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(2, 2, 2)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 40, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -620,7 +774,7 @@ public class client extends javax.swing.JFrame {
             program.sclient.connect(socketaddr); //connect với server
             status.setText("Connected");
             status.setForeground(Color.GREEN);
-        } catch(Exception ex){
+        } catch(IOException ex){
             JOptionPane.showMessageDialog(rootPane, "Kết nối thất bại tới " + program.ip);
             test = false;
             program.sclient = null;
@@ -663,9 +817,7 @@ public class client extends javax.swing.JFrame {
                 DefaultTableModel table = (DefaultTableModel)apptable.getModel();
                 table.addRow(data);
             }
-        } catch (IOException ex) {
-            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_XemappActionPerformed
@@ -737,15 +889,13 @@ public class client extends javax.swing.JFrame {
             int soprocess1 = 0;
             soprocess1 = Integer.parseInt(soprocess);
             oin = new ObjectInputStream(program.sclient.getInputStream());
-            for (int i = 0; i < soprocess1-3; i++)
+            for (int i = 0; i < soprocess1; i++)
             {
                 String[] data = (String[]) oin.readObject();
                 DefaultTableModel table = (DefaultTableModel)processtable.getModel();
                 table.addRow(data);
             }
-        } catch (IOException ex) {
-            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_XemprocessActionPerformed
@@ -815,13 +965,13 @@ public class client extends javax.swing.JFrame {
         status.setForeground(Color.RED);
     }//GEN-LAST:event_ExitActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
         if(program.sclient == null)
         {
             JOptionPane.showMessageDialog(rootPane, "Chưa kết nối tới server");
             return;
         }
-        String s = "SHUTDOWN";
+        String s = "RESTART";
         try {
             //            program.os = new BufferedWriter(new OutputStreamWriter(program.sclient.getOutputStream()));
             program.os.write(s);
@@ -832,7 +982,7 @@ public class client extends javax.swing.JFrame {
         }
         status.setText("Disconnected");
         status.setForeground(Color.RED);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_restartActionPerformed
 
     private void savepicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savepicActionPerformed
 
@@ -865,12 +1015,139 @@ public class client extends javax.swing.JFrame {
             img = ImageIO.read(in);
             Image img1 = img;
             screenshot.setIcon(new ImageIcon(img1.getScaledInstance(screenshot.getWidth(),screenshot.getHeight(), Image.SCALE_DEFAULT)));
-        } catch (IOException ex) {
-            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+            program.img1 = img;
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_takepicActionPerformed
+
+    private void signoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoutActionPerformed
+        if(program.sclient == null)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Chưa kết nối tới server");
+            return;
+        }
+        String s = "SIGNOUT";
+        try {
+            //            program.os = new BufferedWriter(new OutputStreamWriter(program.sclient.getOutputStream()));
+            program.os.write(s);
+            program.os.newLine();
+            program.os.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        status.setText("Disconnected");
+        status.setForeground(Color.RED);
+    }//GEN-LAST:event_signoutActionPerformed
+
+    private void keylogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keylogActionPerformed
+        if(program.sclient == null)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Chưa kết nối tới server");
+            return;
+        }
+        String s = "KEYLOG";
+        try {
+//            program.os = new BufferedWriter(new OutputStreamWriter(program.sclient.getOutputStream()));
+            program.os.write(s);
+            program.os.newLine();
+            program.os.flush();
+            new keylog().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_keylogActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        if(program.sclient == null)
+        {
+            System.exit(0);
+        } else {
+        String s = "EXIT";
+        try {
+            program.os.write(s);
+            program.os.newLine();
+            program.os.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        System.exit(0);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x-xMouse, y-yMouse);
+    }//GEN-LAST:event_jPanel4MouseDragged
+
+    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_jPanel4MousePressed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        this.setState(client.ICONIFIED);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void systembuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_systembuttonMouseEntered
+        systembutton.setBackground(new java.awt.Color(255,255,255));
+        systembutton.setForeground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_systembuttonMouseEntered
+
+    private void systembuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_systembuttonMouseExited
+        systembutton.setBackground(new java.awt.Color(51,51,51));
+        systembutton.setForeground(new java.awt.Color(255,255,255));
+    }//GEN-LAST:event_systembuttonMouseExited
+
+    private void appbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appbuttonMouseEntered
+        appbutton.setBackground(new java.awt.Color(255,255,255));
+        appbutton.setForeground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_appbuttonMouseEntered
+
+    private void appbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appbuttonMouseExited
+        appbutton.setBackground(new java.awt.Color(51,51,51));
+        appbutton.setForeground(new java.awt.Color(255,255,255));
+    }//GEN-LAST:event_appbuttonMouseExited
+
+    private void processbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processbuttonMouseEntered
+        processbutton.setBackground(new java.awt.Color(255,255,255));
+        processbutton.setForeground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_processbuttonMouseEntered
+
+    private void processbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processbuttonMouseExited
+        processbutton.setBackground(new java.awt.Color(51,51,51));
+        processbutton.setForeground(new java.awt.Color(255,255,255));
+    }//GEN-LAST:event_processbuttonMouseExited
+
+    private void screenshotbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_screenshotbuttonMouseEntered
+        screenshotbutton.setBackground(new java.awt.Color(255,255,255));
+        screenshotbutton.setForeground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_screenshotbuttonMouseEntered
+
+    private void screenshotbuttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_screenshotbuttonMouseExited
+        screenshotbutton.setBackground(new java.awt.Color(51,51,51));
+        screenshotbutton.setForeground(new java.awt.Color(255,255,255));
+    }//GEN-LAST:event_screenshotbuttonMouseExited
+
+    private void shutdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shutdownActionPerformed
+        if(program.sclient == null)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Chưa kết nối tới server");
+            return;
+        }
+        String s = "RESTART";
+        try {
+            //            program.os = new BufferedWriter(new OutputStreamWriter(program.sclient.getOutputStream()));
+            program.os.write(s);
+            program.os.newLine();
+            program.os.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        status.setText("Disconnected");
+        status.setForeground(Color.RED);
+    }//GEN-LAST:event_shutdownActionPerformed
 
     /**
      * @param args the command line arguments
@@ -906,6 +1183,7 @@ public class client extends javax.swing.JFrame {
 //            }
 //        });
 //    }
+    int xMouse,yMouse;
     byte[] bytes;
     InputStream is = null;
     private BufferedImage img;
@@ -924,10 +1202,13 @@ public class client extends javax.swing.JFrame {
     private javax.swing.JTable apptable;
     private javax.swing.JButton ipconnect;
     private javax.swing.JTextField iptext;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton keylog;
@@ -937,9 +1218,12 @@ public class client extends javax.swing.JFrame {
     private javax.swing.JPanel lsystem;
     private javax.swing.JButton processbutton;
     private javax.swing.JTable processtable;
+    private javax.swing.JButton restart;
     private javax.swing.JButton savepic;
     private javax.swing.JLabel screenshot;
     private javax.swing.JButton screenshotbutton;
+    private javax.swing.JButton shutdown;
+    private javax.swing.JButton signout;
     private javax.swing.JLabel status;
     private javax.swing.JButton systembutton;
     private javax.swing.JButton takepic;
