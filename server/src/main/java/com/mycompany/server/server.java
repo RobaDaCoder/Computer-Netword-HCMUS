@@ -101,7 +101,7 @@ public class server extends javax.swing.JFrame {
                     case "SCREENSHOT" -> takepic();
                     case "START" -> start();
                     case "SHUTDOWN" -> shutdown();
-                    case "restart" -> restart();
+                    case "RESTART" -> restart();
                     case "KILL" -> kill();
                     case "XEMAPP" -> xemapp();
                     case "SIGNOUT" -> signout();
@@ -294,162 +294,151 @@ public class server extends javax.swing.JFrame {
     public void xemprocess()
     {
         try {
-                        String line = null;
-                        p = Runtime.getRuntime().exec("tasklist /FO CSV /NH");
-                        input = new BufferedReader(new InputStreamReader(p.getInputStream()));                  
-                        int soprocess = 0;
-                        while(input.readLine() != null){
-                            soprocess++;
-                        }
-                        String soprocess1 = Integer.toString(soprocess);
-                        program.os.write(soprocess1);
-                        program.os.newLine();
-                        program.os.flush();
-                        p1 = Runtime.getRuntime().exec("tasklist /FO CSV /NH");
-                        input = new BufferedReader(new InputStreamReader(p1.getInputStream()));
-                        out = new ObjectOutputStream(program.sserver.getOutputStream());
-                        try {
-                            for(int i = 0; (i<soprocess) ;i++) {
-                                line = input.readLine();
-                                line = line.trim();
-                                String[] splitline = line.split(",",5);
-                                String data[] = {splitline[0].replace("\"",""),splitline[1].replace("\"",""),splitline[2].replace("\"",""),splitline[3].replace("\"",""),splitline[4].replace("\"","")};
-                                out.writeObject(data);
-                                out.flush();
-                            }
-                        }catch(IOException e)
-                        {
-                          JOptionPane.showMessageDialog(null,e);
-                        }
-                        
-                    }
-                    catch(IOException e)
-                    {
-                      JOptionPane.showMessageDialog(null,e);
-                    }
+            String line = null;
+            p = Runtime.getRuntime().exec("tasklist /FO CSV /NH");
+            input = new BufferedReader(new InputStreamReader(p.getInputStream()));                  
+            int soprocess = 0;
+            while(input.readLine() != null){
+                soprocess++;
+            }
+            String soprocess1 = Integer.toString(soprocess);
+            program.os.write(soprocess1);
+            program.os.newLine();
+            program.os.flush();
+            p1 = Runtime.getRuntime().exec("tasklist /FO CSV /NH");
+            input = new BufferedReader(new InputStreamReader(p1.getInputStream()));
+            out = new ObjectOutputStream(program.sserver.getOutputStream());
+            try {
+                for(int i = 0; (i<soprocess) ;i++) {
+                    line = input.readLine();
+                    line = line.trim();
+                    String[] splitline = line.split(",",5);
+                    String data[] = {splitline[0].replace("\"",""),splitline[1].replace("\"",""),splitline[2].replace("\"",""),splitline[3].replace("\"",""),splitline[4].replace("\"","")};
+                    out.writeObject(data);
+                    out.flush();
+                }
+            }catch(IOException e)
+            {
+              JOptionPane.showMessageDialog(null,e);
+            }
+
+        }
+        catch(IOException e)
+        {
+          JOptionPane.showMessageDialog(null,e);
+        }
     }
-    public void xemapp()
-    {
+public void xemapp()
+{
+    try {
+        String line = null;
+        p = Runtime.getRuntime().exec("powershell.exe Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle –AutoSize");
+        input = new BufferedReader(new InputStreamReader(p.getInputStream()));                  
+        int soprocess = 0;
+        while(input.readLine() != null){
+            soprocess++;
+        }
+        String soprocess1 = Integer.toString(soprocess);
+        program.os.write(soprocess1);
+        program.os.newLine();
+        program.os.flush();
+        p1 = Runtime.getRuntime().exec("powershell.exe Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle –AutoSize");
+        input = new BufferedReader(new InputStreamReader(p1.getInputStream()));
+        out = new ObjectOutputStream(program.sserver.getOutputStream());
         try {
-                        String line = null;
-                        p = Runtime.getRuntime().exec("powershell.exe Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle –AutoSize");
-                        input = new BufferedReader(new InputStreamReader(p.getInputStream()));                  
-                        int soprocess = 0;
-                        while(input.readLine() != null){
-                            soprocess++;
-                        }
-                        String soprocess1 = Integer.toString(soprocess);
-//                        program.os = new BufferedWriter(new OutputStreamWriter(program.sserver.getOutputStream()));
-                        program.os.write(soprocess1);
-                        program.os.newLine();
-                        program.os.flush();
-                        p1 = Runtime.getRuntime().exec("powershell.exe Get-Process | Where-Object { $_.MainWindowTitle } | Format-Table ID,Name,Mainwindowtitle –AutoSize");
-                        input = new BufferedReader(new InputStreamReader(p1.getInputStream()));
-                        out = new ObjectOutputStream(program.sserver.getOutputStream());
-                        try {
-                            for(int i = 0; (i<soprocess) ;i++) {
-                                line = input.readLine();
-                                line = line.trim();
-                                if (i>=3) 
-                                {
-                                    if (i == soprocess-2)
-                                    {
-                                        break;
-                                    }
-                                    line = line.replaceAll("\\s{1,100}", " ");
-                                    String[] splitline = line.split(" ",3);
-                                    String data[] = {splitline[0],splitline[1],splitline[2]};
-                                    out.writeObject(data);
-                                    out.flush();
-                                }
-                            }
-                        }
-                    catch(IOException e)
+            for(int i = 0; (i<soprocess) ;i++) {
+                line = input.readLine();
+                line = line.trim();
+                if (i>=3) 
+                {
+                    if (i == soprocess-2)
                     {
-                      JOptionPane.showMessageDialog(null,e);
+                        break;
                     }
-                    }catch(IOException e)
-                    {
-                      JOptionPane.showMessageDialog(null,e);
-                    }
+                    line = line.replaceAll("\\s{1,100}", " ");
+                    String[] splitline = line.split(" ",3);
+                    String data[] = {splitline[0],splitline[1],splitline[2]};
+                    out.writeObject(data);
+                    out.flush();
+                }
+            }
+        }
+    catch(IOException e)
+    {
+      JOptionPane.showMessageDialog(null,e);
     }
+    }catch(IOException e)
+    {
+      JOptionPane.showMessageDialog(null,e);
+    }
+}
     public void kill() throws IOException
     {
         boolean work = true;
-                    while (work) {
-                        receiveSignal();
-                        switch(program.signal)
-                        {
-                            case "KILLID" -> {
-                                String pid = program.is.readLine();
-                                if (pid != null)
-                                {
-                                try {
-                                    String[] cmd = {"taskkill", "/F", "/T", "/PID", pid};
-                                    ProcessBuilder p = new ProcessBuilder();
-                                    p.command(cmd);
-                                    p.start();
-                                    program.os.write("Successfully kill a process!");
-                                    program.os.newLine();
-                                    program.os.flush();
-                                } catch (IOException ex) {
-                                    program.os.write("There is an error, please try again!");
-                                    program.os.newLine();
-                                    program.os.flush();
-                                    break;
-                                }
-                                } else {
-                                program.os.write("There is an error, please try again!");
-                                program.os.newLine();
-                                program.os.flush();
-                                break;
-                                }
-                            }
-                            case "QUIT" -> {
-                                work = false;
-                                break;
-                            }
-                        }
-    }
+        while (work) {
+            receiveSignal();
+            switch(program.signal)
+            {
+                case "KILLID" -> {
+                    String pid = program.is.readLine();
+                    if (!"ERROR".equals(pid))
+                    {
+                    try {
+                        String[] cmd = {"taskkill", "/F", "/T", "/PID", pid};
+                        ProcessBuilder p = new ProcessBuilder();
+                        p.command(cmd);
+                        p.start();
+                        program.os.write("Successfully kill a process!");
+                        program.os.newLine();
+                        program.os.flush();
+                    } catch (IOException ex) {
+                        break;
+                    }
+                    } else {
+                    program.os.write("There is an error, please try again!");
+                    program.os.newLine();
+                    program.os.flush();
+                    break;
+                    }
+                }
+                case "QUIT" -> {
+                    work = false;
+                    break;
+                }
+            }
+        }
     }
     public void start() throws IOException
     {
         boolean work = true;
-                    while (work) {
-                        receiveSignal();
-                        switch(program.signal)
-                        {
-                            case "STARTEXE" -> {
-                                String exe = program.is.readLine();
-                                exe = exe+".exe";
-                                if (!"ERROR".equals(exe))
-                                {
-                                try {
-//                                    String[] run = {"cmd","/c","start", exe};
-                                    ProcessBuilder p = new ProcessBuilder();
-                                    p.command(exe);
-                                    p.start();
-                                    program.os.write("Successfully run the program!");
-                                    program.os.newLine();
-                                    program.os.flush();
-                                } catch (IOException ex) {
-                                    program.os.write("There is an error, please try again!");
-                                    program.os.newLine();
-                                    program.os.flush();
-                                }
-                                } else {
-                                program.os.write("There is an error, please try again!");
-                                program.os.newLine();
-                                program.os.flush();
-                                break;
-                                }
-                            }
-                            case "QUIT" -> {
-                                work = false;
-                                break;
-                            }
-                        }
+        while (work) {
+            receiveSignal();
+            switch(program.signal)
+            {
+                case "STARTEXE" -> {
+                    String exe = program.is.readLine();
+                    if (!"ERROR".equals(exe))
+                    {
+                    try {
+                        Process process = Runtime.getRuntime().exec( "cmd.exe /C start " + exe);
+                        program.os.write("Successfully run the program!");
+                        program.os.newLine();
+                        program.os.flush();
+                    } catch (IOException ex) {
                     }
+                    } else {
+                    program.os.write("There is an error, please try again!");
+                    program.os.newLine();
+                    program.os.flush();
+                    break;
+                    }
+                }
+                case "QUIT" -> {
+                    work = false;
+                    break;
+                }
+            }
+        }
     }
     
    
